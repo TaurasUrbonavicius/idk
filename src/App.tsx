@@ -4,6 +4,7 @@ import "./index.css";
 import { BrowserRouter, Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Card from "./pages/Card";
 import UserPage from "./pages/UserPage";
 import AdminPage from "./pages/AdminPage";
 import { me as apiMe, logout as apiLogout, getToken, setToken } from "./lib/clientAuth";
