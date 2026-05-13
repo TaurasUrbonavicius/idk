@@ -4,7 +4,6 @@ import "./index.css";
 import { BrowserRouter, Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Card from "./pages/Card";
 import UserPage from "./pages/UserPage";
 import AdminPage from "./pages/AdminPage";
 import { me as apiMe, logout as apiLogout, getToken, setToken } from "./lib/clientAuth";
@@ -25,8 +24,7 @@ function RequireAdmin({ user, children }: { user: any | null | undefined; childr
 function Home() {
   return (
     <div>
-      <h1>Home</h1>
-      <p>Welcome to the app. Use the links above to register or login.</p>
+      <p className="mb-3 w-full flex flex-wrap items-center justify-center">Welcome to the app. Use the links above to register or login.</p>
     </div>
   );
 }
@@ -83,7 +81,7 @@ function AppInner({ user, setUser }: { user: any | null | undefined; setUser: (u
 
   return (
     <div className="p-4">
-      <nav className="mb-3 flex flex-wrap items-center gap-2 text-sm">
+      <nav className="mb-3 w-full flex flex-wrap items-center justify-center gap-2 text-sm">
         <Link to="/" className="text-primary hover:underline">Home</Link>
         {user === null && (
           <>
@@ -100,7 +98,7 @@ function AppInner({ user, setUser }: { user: any | null | undefined; setUser: (u
         {user && (
           <span className="ml-3 flex items-center gap-2 text-sm">
             <span>Logged in as <strong>{user.username}</strong></span>
-            <button onClick={handleLogout} className="ml-2 px-2 py-1 rounded bg-gray-200 hover:bg-gray-300 text-sm">Logout</button>
+            <button onClick={handleLogout} className="ml-2 px-2 py-1 rounded bg-gray-700 hover:bg-gray-500 text-sm">Logout</button>
           </span>
         )}
       </nav>
